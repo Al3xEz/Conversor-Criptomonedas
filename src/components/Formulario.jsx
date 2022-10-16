@@ -23,7 +23,7 @@ const InputSubmit = styled.input`
   }
 `;
 
-const Formulario = () => {
+const Formulario = ({ setMonedas }) => {
   const [criptos, setCriptos] = useState([]);
   const [moneda, SelectMonedas] = useSelectMonedas("Elige tu Moneda", monedas);
   const [criptoMoneda, SelectCriptomoneda] = useSelectMonedas(
@@ -55,10 +55,10 @@ const Formulario = () => {
 
     if ([moneda, criptoMoneda].includes("")) {
       setError(true);
-      console.log("Todos los campos son obligatorios");
       return;
     }
     setError(false);
+    setMonedas({ moneda, criptoMoneda });
   };
 
   return (
