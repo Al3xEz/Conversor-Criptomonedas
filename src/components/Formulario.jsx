@@ -52,7 +52,6 @@ const Formulario = ({ setMonedas }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
     if ([moneda, criptoMoneda].includes("")) {
       setError(true);
       return;
